@@ -1,0 +1,15 @@
+type SkeletonItem = {
+  post: string // post URI
+
+  // optional reason for inclusion in the feed
+  // (generally to be displayed in client)
+  reason?: Reason
+}
+
+// for now, the only defined reason is a repost, but this is open to extension
+type Reason = ReasonRepost
+
+type ReasonRepost = {
+  $type: 'app.bsky.feed.defs#skeletonReasonRepost'
+  repost: string // repost URI
+}
